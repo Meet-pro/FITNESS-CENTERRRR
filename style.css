@@ -1,24 +1,36 @@
-body{
-    min-height: 100vh;
+html, body {
+    height: 100vh;
     margin: 0;
     padding: 0;
     font-family: Georgia, serif;
     color: rgba(250, 248, 245, 0.9);
-
     background-image: url("bg2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: scroll;
+    -webkit-background-size: cover; /* For older mobiles */
+    -moz-background-size: cover;
 }
-@media (max-width: 768px){
-    body{
-        background-position: 70% center;
+@media (max-width: 768px) {
+    html, body {
+        background-size: contain; /* Or 'cover' if image fits */
+        background-attachment: scroll !important;
+    }
+    .fom {
+        position: relative; /* Avoid absolute positioning issues on small screens */
+        bottom: auto;
+        left: auto;
+        margin: 20px auto;
+        width: 90%;
     }
 }
-
-header{
-    display:flex
+header {
+    display: flex;
+    min-height: 100vh; /* Ensures header fills full viewport */
+    position: relative;
 }
+
 .left{
      position: absolute;
     left:10px;
@@ -245,4 +257,5 @@ form{
 .ff{
     text-align: center;
     text-decoration: underline;
+
 }
